@@ -1,10 +1,13 @@
+<?php 
+   require_once 'connect.php';
+?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Soal 1 - UTS</title>
+    <title>Soal 3 - UTS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -28,37 +31,27 @@
     </nav>
     <div class="container">
         <div class="row mt-4">
+
+            <?php 
+                $result =  $connect->query("SELECT * FROM food");
+                foreach ($result as $r) {
+            ?>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://www.themealdb.com/images/category/beef.png" alt="..." style="width:415px;height:230px;">
+                    <img src="<?=$r['image']?>" alt="..." style="width:415px;height:230px;">
                     <div class="card-body">
-                        <h5 class="card-title">Beef</h5>
-                        <p class="card-text"> Beef is the culinary name for meat from cattle, particularly skeletal muscle.....</p>
-                        <a href="#" class="btn btn-outline-warning">Detail</a>
+                        <h5 class="card-title"><?=$r['menu']?></h5>
+                        <p class="card-text"> 
+                            <?=$r['deskripsi']?>
+                        </p>
+                        <a href="detail.php?id=<?=$r['id']?>" 
+                        class="btn btn-outline-warning">Detail</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://www.themealdb.com/images/category/chicken.png" alt="..." style="width:415px;height:230px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Chicken</h5>
-                        <p class="card-text"> Chicken is a type of domesticated fowl, a subspecies of the red junglefowl....</p>
-                        <a href="#" class="btn btn-outline-warning">Detail</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://www.themealdb.com/images/category/vegan.png" alt="..." style="width:415px;height:230px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Vegan</h5>
-                        <p class="card-text"> "ARRANGE chicken in a single layer in a large pot.","Add water to just cover.",....</p>
-                        <a href="#" class="btn btn-outline-warning">Detail</a>
-                    </div>
-                </div>
-            </div>
-            
+          <?php } ?>
+           
+           
         </div>
     </div>
 

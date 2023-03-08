@@ -1,3 +1,15 @@
+<?php 
+        require_once 'connect.php';
+        $id = $_GET['id'];
+        $row = $connect->query("SELECT * FROM food WHERE
+         id='$id'");
+        $menu = $row['menu'];     
+        $image = $row['image'];     
+        $deskripsi = $row['deskripsi'];     
+        $fat = $row['fat'];     
+        $kalori = $row['kalori'];     
+        $karbs = $row['karbs'];     
+?>
 <!doctype html>
 <html lang="en">
 
@@ -30,29 +42,29 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-4">
-                <img src="https://www.themealdb.com/images/category/beef.png">
+                <img src="<?=$image?>">
 
             </div>
             <div class="col-md-8">
                 <p class="text-info">Food</p>
-                <h4>Beef</h4>
+                <h4><?=$menu?></h4>
 
                 <p class="text-justify">
-                    Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times.[1] Beef is a source of high-quality protein and essential nutrients.[2]
+                   <?=$deskripsi?>
                 </p>
                 <div class="mt-4">
                     <div class="row">
                         <div class="col bg-light">
                             <h5 class="text-success">Calories</h5>
-                            <h3>33000</h3>
+                            <h3><?=$kalori?></h3>
                         </div>
                         <div class="col bg-light">
                             <h5 class="text-success">Fat</h5>
-                            <h3>1050 <sub>G</sub></h3>
+                            <h3><?$fat?> <sub>G</sub></h3>
                         </div>
                         <div class="col bg-light">
                             <h5 class="text-success">Carbs</h5>
-                            <h3>3000<sub>G</sub></h3>
+                            <h3><?=$karbs?><sub>G</sub></h3>
                         </div>
                     </div>
                 </div>

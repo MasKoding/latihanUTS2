@@ -63,4 +63,15 @@ Hitung penjualan jika penjualan jaket pria : 800
 
 3. Buat database dan koneksi database sesuai permintaan berikut:
   database : recipe_db
-  table 
+  table food
+  • id int(11) AUTO INCREAMENT
+  * menu varchar(255)
+  * kategori varchar(255)
+  * calory int(11)
+  * fat int(11)
+  * carbs int(11)
+  * image varchar(255)
+
+  <img src="img/home.png">
+  <img src="img/detail.png">
+  

@@ -17,6 +17,10 @@
                     nakgnaneynem php rajaleb
 
 2. Buatlah array 2 dimensi untuk menampilkan tabel seperti dibawah:
+Gunakan fungsi  array sum dan array column
+Hitung penjualan jika penjualan jaket pria : 800
+                                jaket wanita : 200
+
   
 <table class="table">
   <thead>
@@ -51,7 +55,7 @@
     </tr>
    <tr>
     <td colspan="6">Sum</td>
-    <td>300</td>
+    <td>Otomatis Bertambah</td>
    </tr>
   </tbody>
 </table>

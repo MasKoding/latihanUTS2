@@ -3,6 +3,9 @@
         $id = $_GET['id'];
         $row = $connect->query("SELECT * FROM food WHERE
          id='$id'");
+       // fetch assoc objek row
+        $row = mysqli_fetch_assoc($row);
+       
         $menu = $row['menu'];     
         $image = $row['image'];     
         $deskripsi = $row['deskripsi'];     

@@ -35,25 +35,44 @@
     </nav>
     <div class="container">
         <div class="row mt-4">
-
-            <?php 
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Menu</th>
+      <th scope="col">Image</th>
+      <th scope="col">Deskripsi</th>
+      <th scope="col">Kalori</th>
+      <th scope="col">Fat</th>
+      <th scope="col">Karbon</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php 
                 $result =  $connect->query("SELECT * FROM food");
-                foreach ($result as $r) {
+               foreach($result as $r){
             ?>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="<?=$r['image']?>" alt="..." style="width:415px;height:230px;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?=$r['menu']?></h5>
-                        <p class="card-text"> 
-                            <?=$r['deskripsi']?>
-                        </p>
-                        <a href="detail.php?id=<?=$r['id']?>" 
-                        class="btn btn-outline-warning">Detail</a>
-                    </div>
-                </div>
-            </div>
+             <tr>
+      <th scope="row"><?=$r['id']?></th>
+      <td><?=$r['menu']?></td>
+      <td><img src="<?=$r['image']?>" alt=""></td>
+      <td><?=$r['deskripsi']?></td>
+      <td><?=$r['kalori']?></td>
+      <td><?=$r['fat']?></td>
+      <td><?=$r['karbs']?></td>
+      <td><a href="edit.php?id=<?=$r['id']?>" class="btn btn-primary">Edit</a></td>
+      <td><a href="delete.php?id=<?=$r['id']?>" class="btn btn-danger">Delete</a></td>
+     
+      </tr>
           <?php } ?>
+   
+   
+  </tbody>
+</table>
+
+
+           
            
            
         </div>

@@ -66,7 +66,7 @@ Hitung penjualan jika penjualan jaket pria : 800
   table food
   * id int(11) AUTO INCREAMENT
   * menu varchar(255)
-  * kategori varchar(255)
+  * deskripsi text
   * calory int(11)
   * fat int(11)
   * carbs int(11)
